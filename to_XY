@@ -1,0 +1,5 @@
+
+% -----------------------------------------------
+function xy = to_XY(abc, A, B)
+    xy = A* abc + B*ones(size(B,2), size(abc,2));
+end

@@ -1,0 +1,378 @@
+function varargout = final(varargin)
+% FINAL M-file for final.fig
+%      FINAL, by itself, creates a new FINAL or raises the existing
+%      singleton*.
+%
+%      H = FINAL returns the handle to a new FINAL or the handle to
+%      the existing singleton*.
+%
+%      FINAL('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in FINAL.M with the given input arguments.
+%
+%      FINAL('Property','Value',...) creates a new FINAL or raises the
+%      existing singleton*.  Starting from the left, property value pairs are
+%      applied to the GUI before final_OpeningFcn gets called.  An
+%      unrecognized property name or invalid value makes property application
+%      stop.  All inputs are passed to final_OpeningFcn via varargin.
+%
+%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
+%      instance to run (singleton)".
+%
+% See also: GUIDE, GUIDATA, GUIHANDLES
+
+% Edit the above text to modify the response to help final
+
+% Last Modified by GUIDE v2.5 17-Jul-2015 16:14:51
+
+% Begin initialization code - DO NOT EDIT
+gui_Singleton = 1;
+gui_State = struct('gui_Name',       mfilename, ...
+                   'gui_Singleton',  gui_Singleton, ...
+                   'gui_OpeningFcn', @final_OpeningFcn, ...
+                   'gui_OutputFcn',  @final_OutputFcn, ...
+                   'gui_LayoutFcn',  [] , ...
+                   'gui_Callback',   []);
+if nargin && ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+end
+
+if nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+else
+    gui_mainfcn(gui_State, varargin{:});
+end
+% End initialization code - DO NOT EDIT
+
+
+% --- Executes just before final is made visible.
+function final_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to final (see VARARGIN)
+
+% Choose default command line output for final
+handles.output = hObject;
+
+% Update handles structure
+guidata(hObject, handles);
+
+% UIWAIT makes final wait for user response (see UIRESUME)
+% uiwait(handles.figure1);
+
+
+% --- Outputs from this function are returned to the command line.
+function varargout = final_OutputFcn(hObject, eventdata, handles) 
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Get default command line output from handles structure
+varargout{1} = handles.output;
+
+
+% --- Executes on selection change in popupmenu1.
+function popupmenu1_Callback(hObject, eventdata, handles)
+% hObject    handle to popupmenu1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = get(hObject,'String') returns popupmenu1 contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from popupmenu1
+s=get(hObject,'value');
+handles.s=s;
+guidata(hObject,handles)
+
+% --- Executes during object creation, after setting all properties.
+function popupmenu1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to popupmenu1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit1_Callback(hObject, eventdata, handles)
+% hObject    handle to edit1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit1 as text
+%        str2double(get(hObject,'String')) returns contents of edit1 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit2_Callback(hObject, eventdata, handles)
+% hObject    handle to edit2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit2 as text
+%        str2double(get(hObject,'String')) returns contents of edit2 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit3_Callback(hObject, eventdata, handles)
+% hObject    handle to edit3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit3 as text
+%        str2double(get(hObject,'String')) returns contents of edit3 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in pushbutton1.
+function pushbutton1_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+s=handles.s;
+infor=handles.infor;
+len=handles.len;
+global A B
+A = [ -1  -cos(pi/3)  0   
+       0   sin(pi/3)  0 ];
+B = [100 ;   0];
+if s==2
+    P1=str2double(get(handles.edit1,'string'));
+    P2=str2double(get(handles.edit2,'string'));
+    P3=str2double(get(handles.edit3,'string'));
+    if P1+P2+P3~=100
+        msgbox('Correct concentration % is not enterd. Total % should be 100%')
+        return
+    end
+elseif s==3
+    CHfor=str2double(get(handles.edit1,'string'));
+    CtoHfor=str2double(get(handles.edit2,'string'));
+    CtoHto=str2double(get(handles.edit3,'string'));
+    P1=((CHfor)/(CHfor+CtoHfor+CtoHto))*100;
+    P2=((CtoHfor)/(CHfor+CtoHfor+CtoHto))*100;
+    P3=((CtoHto)/(CHfor+CtoHfor+CtoHto))*100;
+    if CHfor>619 && CtoHfor>2480 && CtoHto>0
+        msgbox('Duval Triangle Test is Not Applicable')
+        return
+    end
+
+end
+
+Xc1 = 100-(P3)-(P1*cos(fromDegrees('Radians',30))*cot(fromDegrees('Radians',60))); % x- coordinate
+Yc1=(P1)*cos(fromDegrees('Radians',30)); % y coordinate
+
+axes(handles.axes1)
+plot(Xc1,Yc1,'r*','MarkerSize',10)
+plot(Xc1,Yc1,'ko','MarkerSize',10,'LineWidth',2)
+x_CurPt=Xc1;
+y_CurPt=Yc1;
+abc_CurPt = to_ABC([x_CurPt, y_CurPt]'); 
+a=P1;b=P2;c=P3;
+a = abc_CurPt(1); 
+b = abc_CurPt(2); 
+c = abc_CurPt(3);
+
+abc_ntrsc_a = [a, 0, (100 - a)]'; 
+abc_ntrsc_b = [(100 - b), b, 0]'; 
+abc_ntrsc_c = [0, (100 - c), c]';
+
+ xy = to_XY ( [abc_ntrsc_a  abc_ntrsc_b  abc_ntrsc_c], A, B);
+ xy_ntrsc_a = xy(:, 1);
+ xy_ntrsc_b = xy(:, 2);
+ xy_ntrsc_c = xy(:, 3);
+ 
+   h_La = line([x_CurPt xy_ntrsc_a(1)], [y_CurPt xy_ntrsc_a(2)]);
+        set(h_La, 'erase', 'xor', 'LineStyle', ':', 'Marker', 'o', 'Color', 'k')
+        set(h_La, 'MarkerSize', 5)
+        set(h_La, 'LineWidth', 2)
+        
+         h_Lb = line([x_CurPt xy_ntrsc_b(1)], [y_CurPt xy_ntrsc_b(2)]);
+        set(h_Lb, 'erase', 'xor', 'LineStyle', ':', 'Marker', 'o', 'Color', 'k')
+        set(h_Lb, 'MarkerSize', 5)
+        set(h_Lb, 'LineWidth', 2)
+        
+        h_Lc = line([x_CurPt xy_ntrsc_c(1)], [y_CurPt xy_ntrsc_c(2)]);
+        set(h_Lc, 'erase', 'xor', 'LineStyle', ':', 'Marker', 'o', 'Color', 'k')
+        set(h_Lc, 'MarkerSize', 5)
+        set(h_Lc, 'LineWidth', 2)
+        cnt=1;
+ 
+for ii=1:length(len)
+    status=inpolygon(Xc1,Yc1,infor{1,ii}.loc(1,:),infor{1,ii}.loc(2,:));
+    if status==1
+        msgbox([infor{1,ii}.patch])
+        cnt=cnt+1;
+        return
+    end
+end
+if cnt==1
+    msgbox('Transformer is in healthy Condition')
+end
+
+
+
+% --- Executes on button press in pushbutton2.
+function pushbutton2_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+%% plot the triangle
+global A B
+A = [ -1  -cos(pi/3)  0   
+       0   sin(pi/3)  0 ];
+B = [100 ;   0];
+% concentration of C2H2
+CtoHto=[0,0,2,100,77,13,13,77,29, 29,13,13,29,15,15,4,4,13,13,29,4,00,00,2,4,4,00,00,4,15,00,00,15]; 
+
+% concentration of Ch4
+CHfor=[98 100 98 0 0 64 87,00,0,31,47,64,00,00,35,46,96,87,47,31,76,80,98,98,96,46,50,80,76,00,00,50,35];
+% blocks length
+len=[3,4,5,8,5,4,4];
+colr=['r','b','k','m','c','y','g'];
+area={'PD','D1','D2','DT','T1','T2','T3'};
+% calculatrion of co -ordinates of duval triangle
+for ii=1:length(CHfor)
+    Xc(ii) = 100-(CtoHto(ii))-(CHfor(ii))*cos(fromDegrees('Radians',30))*cot(fromDegrees('Radians',60)); % x- coordinate
+    Yc(ii)=(CHfor(ii))*cos(fromDegrees('Radians',30)); % y coordinate
+end
+axes(handles.axes1)
+ind=1;
+for ii=1:length(len)
+    data.id=ii;
+    data.patch=area(ii);
+    data.loc(1,:)=Xc(ind:ind+len(ii)-1);
+    data.loc(2,:)=Yc(ind:ind+len(ii)-1);
+    infor(ii)={data};
+    plot(Xc(ind:ind+len(ii)-1),Yc(ind:ind+len(ii)-1),'k-','LineWidth',2)
+    patch(Xc(ind:ind+len(ii)-1),Yc(ind:ind+len(ii)-1),colr(ii))
+    ind=ind+len(ii);
+    hold on
+    clear data
+end
+axis off
+text(40,-7,'<--C2H2(%)')
+text(15,40,'CH4(%)-->','Rotation',60)
+text(80,50,'C2H4(%)-->','Rotation',-60)
+text(10,-7,'D1')
+text(60,-7,'D2')
+text(75,-7,'DT')
+text(93,-7,'T3')
+text(50,88,'PD')
+text(50,88,'PD')
+text(55,83,'T1','Rotation',-60)
+text(70,59,'T2','Rotation',-60)
+%% axis labelling
+
+TICK_SIZE = 1;
+%Tick1 = linspace(20, 80, 4);
+Tick1 = linspace(10, 90, 9);
+Tick1 = [Tick1; 0*ones(1, size(Tick1, 2))];
+Tick1 = [Tick1; 100 - sum(Tick1) ];
+
+Lbl1 = linspace(20, 80, 4) + 3;                         
+Lbl1 = [Lbl1; -3*ones(1, size(Lbl1, 2))];             
+Lbl1 = [Lbl1; 100 - sum(Lbl1) ] - cos(pi/3);      
+
+xy = to_XY(Lbl1, A, B);
+for i = 1:size(Lbl1, 2),
+   text(xy(1, i), xy(2, i), sprintf('%g', 2*Tick1(1, i)))
+end
+
+Lbl1 = linspace(20, 80, 4) + 1;                         
+Lbl1 = [Lbl1; -(2/cos(pi/3))*ones(1, size(Lbl1, 2)) ];  
+Lbl1 = [Lbl1; 100 - sum(Lbl1) + 1];               
+
+abc = circshift(Lbl1, 1);
+xy = to_XY(abc, A, B);
+for i = 1:size(Lbl1, 2),
+   text(xy(1, i), xy(2, i), sprintf('%g', 2*Tick1(1, i)))
+end
+
+
+Lbl1 = linspace(20, 80, 4);                             
+Lbl1 = [Lbl1; -3*cos(pi/3)*ones(1, size(Lbl1, 2))];     
+Lbl1 = [Lbl1; 100 - sum(Lbl1) ] - cos(pi/3);      
+
+abc = circshift(Lbl1, 2);
+xy = to_XY(abc, A, B);
+for i = 1:size(Lbl1, 2),
+   text(xy(1, i), xy(2, i), sprintf('%g', 2*Tick1(1, i)))
+end
+handles.infor=infor;
+handles.len=len;
+guidata(hObject,handles)
+
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+axes(handles.axes1)
+cla
+
+
+% --- Executes on selection change in listbox1.
+function listbox1_Callback(hObject, eventdata, handles)
+% hObject    handle to listbox1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns listbox1 contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from listbox1
+
+
+% --- Executes during object creation, after setting all properties.
+function listbox1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to listbox1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: listbox controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
